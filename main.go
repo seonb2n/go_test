@@ -8,9 +8,12 @@ import (
 	"net/http"
 )
 
+// 여러 개의 상수를 묶어서 지정하고자 사용
 var (
 	framework string
-	port      = flag.Int("p", 8888, "서버가 Listen할 port 번호를 입력해주세요.")
+	//선언과 동시에 할당할 수 있다
+	// framework string = "fiber"
+	port = flag.Int("p", 8888, "서버가 Listen할 port 번호를 입력해주세요.")
 )
 
 func init() {
@@ -58,4 +61,18 @@ func RunNewFiberServer() {
 	if err := app.Listen(addr); err != nil {
 		log.Print(err)
 	}
+}
+
+/*
+*
+복수 return 이 가능
+*/
+func sum(nums ...int) (int, int) {
+	s := 0     // 합계
+	count := 0 // 요소 갯수
+	for _, n := range nums {
+		s += n
+		count++
+	}
+	return count, s
 }
