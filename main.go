@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/gofiber/fiber/v2"
 	"log"
 	"net/http"
 )
@@ -89,5 +90,6 @@ func sum(nums ...int) (int, int) {
 
 func calc(f func(int, int) int, a int, b int) int {
 	result := f(a, b)
+
 	return result
 }
