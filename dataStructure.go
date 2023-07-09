@@ -80,3 +80,21 @@ func main_queue() {
 		v = queue.Pop()
 	}
 }
+
+// 스택 자료구조
+func main3() {
+	stack := list.New()
+
+	// 스택에 요소 추가
+	// 뒤에 넣는다.
+	stack.PushBack(1)
+	stack.PushBack(2)
+	stack.PushBack(3)
+
+	// 스택에서 요소 꺼내기
+	for stack.Len() > 0 {
+		element := stack.Back()
+		stack.Remove(element)
+		fmt.Println(element.Value)
+	}
+}
